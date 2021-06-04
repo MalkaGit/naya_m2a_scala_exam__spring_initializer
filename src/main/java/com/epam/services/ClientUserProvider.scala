@@ -1,18 +1,18 @@
-package com.epam.services.user_providers
+package com.epam.services
 
 import com.epam.models.{Client, User}
-import com.epam.models.ClientAdapter.clientsFromLines
-import com.epam.models.UserAdapter.UsersFromClients
-import com.epam.services.user_providers.interface.UserProvider
+import com.epam.services.interface.UserProvider
 import com.epam.utils.TextFileReader
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 
 import scala.collection.mutable.ListBuffer
+import com.epam.models.ClientAdapter.clientsFromLines
+import com.epam.models.UserAdapter.UsersFromClients
 
 @Component
-case class ClientService(@Value("${clientsFilepath}") private val clientsFilepath: String, private val clientValidator: ClientValidator, private val reader: TextFileReader)
-    extends UserProvider {
+case class ClientUserProvider(@Value("${clientsFilepath}") private val clientsFilepath: String, private val clientValidator: ClientValidator, private val reader: TextFileReader)
+  extends UserProvider {
 
   override def getValidUsers(): List[User] = {
     var clientLines: List[String] = reader.readLines(clientsFilepath);
@@ -22,38 +22,3 @@ case class ClientService(@Value("${clientsFilepath}") private val clientsFilepat
     return validUsers.toList
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//var c = clientObjects.last;
-//var x = clientValidator.isValid(c);

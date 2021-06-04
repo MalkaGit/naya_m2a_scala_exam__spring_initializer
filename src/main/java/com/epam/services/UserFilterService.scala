@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 
 @Component
-case class FilterUserService(private val repository: UserRepository) {
+case class UserFilterService(private val repository: UserRepository) {
 
   def run(request: FilterUserRequest): List[User] = {
     return repository.filter(request)

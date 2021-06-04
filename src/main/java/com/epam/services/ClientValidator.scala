@@ -1,4 +1,4 @@
-package com.epam.services.user_providers
+package com.epam.services
 
 import com.epam.models.Client
 import com.epam.models.enums.Gender.StringExt_Gender
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 @Component
 case class ClientValidator() {
   def isValid(client: Client): Boolean =
-      client.gender.isValidGener &&
+    client.gender.isValidGener &&
       client.marital_status.isValidMaritalStatus &&
       client.age.isValidAge &&
       client.number_of_children.isValidNumberOfChildren &&

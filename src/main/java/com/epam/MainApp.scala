@@ -9,21 +9,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.{Bean, PropertySource}
 import com.google.gson.Gson
+import com.sun.org.slf4j.internal.{Logger, LoggerFactory}
+import lombok.extern.slf4j.Slf4j
 
 import java.util
 
 @SpringBootApplication
-@PropertySource(Array("user_providers.properties"))
+@PropertySource(Array("user_providers.properties","filter_user.properties"))
 class MainApp {
 }
+
 
 object MainApp {
 
   def main(args: Array[String]): Unit = {
     val springContext: ConfigurableApplicationContext = SpringApplication.run(classOf[MainApp])
     val appDataContext : AppContext = springContext.getBean(classOf[AppContext]);
-    println(appDataContext.cachedUsers)
-
     val flow: FilterUsersFlow = springContext.getBean(classOf[FilterUsersFlow]);
     flow.run();
   }
