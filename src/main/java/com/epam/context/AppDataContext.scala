@@ -1,7 +1,7 @@
-package com.epam.app.context
+package com.epam.context
 
 import com.epam.models.User
 
-trait AppContext {
+trait AppDataContext {
   var cachedUsers: List[User]
 }

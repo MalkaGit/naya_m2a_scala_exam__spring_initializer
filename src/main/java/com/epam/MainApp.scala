@@ -1,7 +1,6 @@
-
 package com.epam
 
-import com.epam.app.context.AppContext
+import com.epam.context.AppDataContext
 import com.epam.flow.FilterUsersFlow
 import com.epam.models.enums.Gender
 import org.springframework.boot.SpringApplication
@@ -19,16 +18,15 @@ import java.util
 class MainApp {
 }
 
-
 object MainApp {
-
-  def main(args: Array[String]): Unit = {
-    val springContext: ConfigurableApplicationContext = SpringApplication.run(classOf[MainApp])
-    val appDataContext : AppContext = springContext.getBean(classOf[AppContext]);
-    val flow: FilterUsersFlow = springContext.getBean(classOf[FilterUsersFlow]);
-    flow.run();
-  }
 
   @Bean
   def gson() : Gson =  new Gson
+
+  def main(args: Array[String]): Unit = {
+    val springContext: ConfigurableApplicationContext = SpringApplication.run(classOf[MainApp])
+    val appDataContext : AppDataContext = springContext.getBean(classOf[AppDataContext]);
+    val flow: FilterUsersFlow = springContext.getBean(classOf[FilterUsersFlow]);
+    flow.run();
+  }
 }

@@ -1,5 +1,6 @@
 package com.epam.models
 
+import com.epam.models.enums.Gender
 import com.epam.models.enums.{Gender, MaritalStatus}
 
 import scala.collection.mutable.ListBuffer

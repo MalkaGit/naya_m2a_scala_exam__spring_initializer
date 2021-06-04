@@ -1,9 +1,9 @@
 package com.epam.services
 
+import com.epam.models.User
 import org.springframework.stereotype.Component
 
 import scala.collection.mutable.ListBuffer
-import com.epam.models.User
 import com.epam.services.interface.UserProvider
 
 @Component

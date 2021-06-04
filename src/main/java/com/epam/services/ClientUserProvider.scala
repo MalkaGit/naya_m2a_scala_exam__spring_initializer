@@ -1,14 +1,15 @@
 package com.epam.services
 
-import com.epam.models.{Client, User}
+import com.epam.models.Client
 import com.epam.services.interface.UserProvider
-import com.epam.utils.TextFileReader
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 
 import scala.collection.mutable.ListBuffer
 import com.epam.models.ClientAdapter.clientsFromLines
 import com.epam.models.UserAdapter.UsersFromClients
+import com.epam.models.{Client, User}
+import com.epam.utils.TextFileReader
 
 @Component
 case class ClientUserProvider(@Value("${clientsFilepath}") private val clientsFilepath: String, private val clientValidator: ClientValidator, private val reader: TextFileReader)

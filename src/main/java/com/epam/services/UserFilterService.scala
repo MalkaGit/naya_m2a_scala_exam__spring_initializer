@@ -1,5 +1,6 @@
 package com.epam.services
 
+import com.epam.models.FilterUserRequest
 import com.epam.models.{FilterUserRequest, User}
 import com.epam.repositories.UserRepository
 import com.epam.utils.TextFileReader

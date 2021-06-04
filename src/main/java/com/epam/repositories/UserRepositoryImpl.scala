@@ -1,14 +1,16 @@
 package com.epam.repositories
 
-import com.epam.app.context.AppContext
-import com.epam.models.enums.{Gender, MaritalStatus}
+import com.epam.models.FilterUserRequest
 import com.epam.models.enums.Gender.StringExt_Gender
+import com.epam.models.enums.Gender
 import com.epam.models.enums.MaritalStatus.StringExt_MaritalStatus
+import com.epam.context.AppDataContext
 import com.epam.models.{FilterUserRequest, User}
+import com.epam.models.enums.{Gender, MaritalStatus}
 import org.springframework.stereotype.Component
 
 @Component
-case class UserRepositoryImpl(private val context: AppContext) extends UserRepository {
+case class UserRepositoryImpl(private val context: AppDataContext) extends UserRepository {
 
   override def filter(request: FilterUserRequest): List[User] = {
     val result = context.cachedUsers.filter(user => filterUser(user, request));

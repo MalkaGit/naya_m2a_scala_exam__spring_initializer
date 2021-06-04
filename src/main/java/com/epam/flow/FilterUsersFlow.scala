@@ -1,10 +1,12 @@
 package com.epam.flow
 
 import com.epam.MainApp
-import com.epam.models.{Client, FilterUserRequest, User}
+import com.epam.models.FilterUserRequest
+import com.epam.utils.TextFileWriter
 import com.epam.models.FilterUserRequestAdapter.FromJson
-import com.epam.services.UserFilterService
 import com.epam.utils.ExtentionUtils.ObjectExt
+import com.epam.models.{FilterUserRequest, User}
+import com.epam.services.UserFilterService
 import com.epam.utils.{TextFileReader, TextFileWriter}
 import com.sun.org.slf4j.internal.{Logger, LoggerFactory}
 import lombok.extern.slf4j.Slf4j

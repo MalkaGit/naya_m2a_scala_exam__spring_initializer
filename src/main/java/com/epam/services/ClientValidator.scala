@@ -1,9 +1,9 @@
 package com.epam.services
 
-import com.epam.models.Client
 import com.epam.models.enums.Gender.StringExt_Gender
 import com.epam.models.enums.MaritalStatus.StringExt_MaritalStatus
 import com.epam.utils.ExtentionUtils.StringExt
+import com.epam.models.Client
 import org.springframework.stereotype.Component
 
 @Component
