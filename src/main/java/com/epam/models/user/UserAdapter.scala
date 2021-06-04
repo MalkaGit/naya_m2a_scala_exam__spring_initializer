@@ -1,10 +1,10 @@
-package com.epam.models
+package com.epam.models.user
 
-import com.epam.models.enums.Gender
+import com.epam.models.client.Client
 import com.epam.models.enums.{Gender, MaritalStatus}
+import com.epam.models.person.Person
 
 import scala.collection.mutable.ListBuffer
-
 
 object UserAdapter {
   implicit class UsersFromClients(clients: List[Client]) extends ListBuffer[User]() {

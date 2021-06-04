@@ -1,7 +1,6 @@
-package com.epam.models
+package com.epam.models.user
 
 import com.epam.utils.JsonParserUtil
-import org.springframework.beans.factory.annotation.Autowired
 
 object FilterUserRequestAdapter {
 

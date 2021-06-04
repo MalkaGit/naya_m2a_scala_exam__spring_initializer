@@ -1,11 +1,11 @@
-package com.epam.services
+package com.epam.services.person
 
-import com.epam.models.Person
-import com.epam.models.PersonAdapter.PersonsFromJson
-import com.epam.models.UserAdapter.UsersFromPersons
-import com.epam.models.{Person, User}
-import com.epam.services.interface.UserProvider
 import com.epam.utils.TextFileReader
+import com.epam.models.person.PersonAdapter.PersonsFromJson
+import com.epam.models.person.Person
+import com.epam.models.user.UserAdapter.UsersFromPersons
+import com.epam.models.user.User
+import com.epam.services.user.UserProvider
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 

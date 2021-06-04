@@ -1,7 +1,7 @@
 package com.epam.context
 
-import com.epam.models.User
-import com.epam.services.UserFactory
+import com.epam.models.user.User
+import com.epam.services.user.UserFactory
 import org.springframework.stereotype.Component
 
 @Component

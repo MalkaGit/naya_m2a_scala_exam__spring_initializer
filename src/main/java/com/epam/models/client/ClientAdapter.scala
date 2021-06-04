@@ -1,4 +1,4 @@
-package com.epam.models
+package com.epam.models.client
 
 import scala.collection.mutable.ListBuffer
 

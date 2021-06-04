@@ -1,12 +1,11 @@
 package com.epam.repositories
 
-import com.epam.models.FilterUserRequest
 import com.epam.models.enums.Gender.StringExt_Gender
 import com.epam.models.enums.Gender
 import com.epam.models.enums.MaritalStatus.StringExt_MaritalStatus
 import com.epam.context.AppDataContext
-import com.epam.models.{FilterUserRequest, User}
 import com.epam.models.enums.{Gender, MaritalStatus}
+import com.epam.models.user.{FilterUserRequest, User}
 import org.springframework.stereotype.Component
 
 @Component

@@ -1,10 +1,9 @@
-package com.epam.services
+package com.epam.services.user
 
-import com.epam.models.User
+import com.epam.models.user.User
 import org.springframework.stereotype.Component
 
 import scala.collection.mutable.ListBuffer
-import com.epam.services.interface.UserProvider
 
 @Component
 case class UserFactory(private val userProviders: java.util.List[UserProvider]) {

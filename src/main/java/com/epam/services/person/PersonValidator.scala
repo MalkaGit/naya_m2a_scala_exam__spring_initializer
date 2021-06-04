@@ -1,7 +1,7 @@
-package com.epam.services
+package com.epam.services.person
 
+import com.epam.models.person.Person
 import com.epam.utils.ExtentionUtils.StringExt
-import com.epam.models.Person
 import org.springframework.stereotype.Component
 
 @Component

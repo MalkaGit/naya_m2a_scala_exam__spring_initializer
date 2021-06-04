@@ -1,4 +1,4 @@
-package com.epam.models
+package com.epam.models.person
 
 import com.epam.utils.JsonParserUtil
 
