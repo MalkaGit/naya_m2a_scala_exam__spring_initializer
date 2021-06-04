@@ -1,4 +1,4 @@
-package com.epam.services.user_providers
+package com.epam.services.user_providers.interface
 
 import com.epam.models.User
 

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component
 
 import scala.collection.mutable.ListBuffer
 import com.epam.models.User
-import com.epam.services.user_providers.UserProvider
+import com.epam.services.user_providers.interface.UserProvider
 
 @Component
 case class UserFactory(private val userProviders: java.util.List[UserProvider]) {

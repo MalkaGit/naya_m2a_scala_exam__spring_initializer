@@ -1,43 +1,39 @@
 package com.epam.utils
 
-import com.google.gson.{Gson, GsonBuilder, JsonElement, JsonNull, JsonSerializationContext, JsonSerializer}
-
-import java.lang.reflect.Type
-
-//import MyJsonProtocol._
-//import spray.json._
-//import DefaultJsonProtocol._ // if you don't supply your own Protocol (see below)
-//import spray.json._
+import com.fasterxml.jackson.databind.json.JsonMapper
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import java.io.StringWriter
 
 
 object JsonSerializerUtil {
-  def serialize[T](obj: Object): String = {
 
-    val builder = new GsonBuilder()
-    builder.registerTypeAdapter(classOf[Option[Any]], new OptionSerializer)
-    val gson = builder.create()
-    return gson.toJson(obj);
-  }
+  private val mapper = JsonMapper.builder().addModule(DefaultScalaModule).build()
 
-
-  class OptionSerializer extends JsonSerializer[Option[Any]] {
-    def serialize(src: Option[Any], typeOfSrc: Type, context: JsonSerializationContext): JsonElement = {
-      src match {
-        case None => JsonNull.INSTANCE
-        //case Some(b: java.sql.Blob) => context.serialize(utils.Sql.blob2String(b))
-        case Some(v) => context.serialize(v)
-      }
-    }
+  def serialize(value: Any): String = {
+    val writer = new StringWriter()
+    mapper.writeValue(writer, value)
+    val result = writer.toString
+    writer.close()
+    return result;
   }
 }
 
 
 
-
-
-
 /*
-case class NamedList[A](name: String, items: List[A])
+about dependencies: https://stackoverflow.com/questions/16966743/small-example-of-jackson-scala-module
+code example:       https://stackoverflow.com/questions/31595362/json-serialization-of-scala-enums-using-jackson
+versions:
+val mapper = new ObjectMapper()
+mapper.registerModule(DefaultScalaModule)
 
-
+def serialize(value: Any): String = {
+    import java.io.StringWriter
+    val writer = new StringWriter()
+    mapper.writeValue(writer, value)
+    writer.toString
+}
  */
+
+
+

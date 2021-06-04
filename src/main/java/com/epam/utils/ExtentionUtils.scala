@@ -7,7 +7,6 @@ object ExtentionUtils {
   }
 
   implicit class StringExt(string: String) {
-
     def isValidAge: Boolean = {
       val tmp: Int = string.toIntOption.getOrElse(-1)
       return tmp >0 && tmp <= 120;
